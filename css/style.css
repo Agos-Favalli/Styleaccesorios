@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+header div .encabezado {
+  background-color: #f0b7b7;
+  color: white;
+  font-size: small;
+  padding: 5px;
+  text-transform: lowercase;
+  text-align: center;
+  list-style: none; }
+
+header div ul {
+  background-image: url(../img/Fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px;
+  list-style: none;
+  font-size: smaller;
+  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  header div ul .registro {
+    padding: 5px;
+    color: white;
+    background-color: #f0b7b7;
+    border-radius: 1rem;
+    border-style: outset;
+    box-shadow: 3px #c0bdbd; }
+
+.cabecera div {
+  padding: 1px 50px 1px 50px; }
+
+.cuerpo {
+  background-image: url(../img/Fondo.jpg);
+  background-size: contain; }
+  .cuerpo nav div h2 {
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif; }
+  .cuerpo nav .navegacion {
+    display: flex;
+    justify-content: center; }
+    .cuerpo nav .navegacion ul li {
+      color: white;
+      margin: 10px 20px 0px 20px;
+      padding: 8px;
+      border-radius: 1rem;
+      border-style: outset;
+      background-color: #f0b7b7;
+      list-style: none;
+      display: inline-flex;
+      box-shadow: 3px #c0bdbd; }
+    .cuerpo nav .navegacion ul li:hover {
+      transform: scale(1.1); }
+  .cuerpo .sale div h2 {
+    color: white;
+    font-size: xx-large;
+    font-weight: 600;
+    background-color: #f0b7b7;
+    margin: 30px;
+    padding: 10px; }
+  .cuerpo nav .imagenes {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    justify-content: space-evenly; }
+    .cuerpo nav .imagenes .imagen1 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen2 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen3 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen4 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen5 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen6 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen7 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen8 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen9 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen10 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen11 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen12 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen13 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen14 {
+      padding: 10px; }
+    .cuerpo nav .imagenes .imagen15 {
+      padding: 10px; }
+    .cuerpo nav .imagenes div {
+      margin-top: 25px; }
+      .cuerpo nav .imagenes div div {
+        text-align: center;
+        font-family: cursive;
+        font-weight: 600;
+        font-size: medium; }
+      .cuerpo nav .imagenes div .title {
+        font-size: x-small; }
+      .cuerpo nav .imagenes div .descuento {
+        color: grey;
+        font-size: smaller; }
+      .cuerpo nav .imagenes div .precio {
+        font-weight: 800; }
+  .cuerpo .botonProductos {
+    background-color: #f0b7b7;
+    margin: 15px 300px 15px 300px;
+    padding: 5px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    box-shadow: 3px #c0bdbd;
+    border-style: outset; }
+  .cuerpo .botonProductos:hover {
+    transform: scale(1.1); }
+  .cuerpo div .subtitle {
+    margin: 50px;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif; }
+  .cuerpo div .sociales {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 50px; }
+
+.datos {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px; }
+
+.ofertas {
+  display: flex;
+  justify-content: center; }
+  .ofertas form {
+    text-align: center; }
+    .ofertas form fieldset h3 {
+      margin: 30px;
+      font-size: xx-large;
+      display: flex;
+      justify-content: center;
+      font-family: Arial, Helvetica, sans-serif; }
+    .ofertas form fieldset h4 {
+      font-size: smaller;
+      text-align: center; }
+    .ofertas form fieldset div input {
+      width: 87%;
+      font-size: small;
+      margin: 20px;
+      text-align: center; }
+
+footer h4 {
+  margin-top: 100px;
+  font-size: medium;
+  display: flex;
+  justify-content: center; }

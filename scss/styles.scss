@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header div .encabezado {
+    background-color: rgb(240, 183, 183);
+    color: white;
+    font-size: small;
+    padding: 5px;
+    text-transform: lowercase;
+    text-align: center;
+    list-style: none;
+} 
+header div ul{
+    background-image: url(../img/Fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 15px;
+    list-style: none;
+    font-size: smaller; 
+    font-style: italic; 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .registro{
+        padding: 5px;  
+        color: white;   
+        background-color:rgb(240, 183, 183);
+        border-radius: 1rem;
+        border-style: outset;
+        box-shadow: 3px rgb(192, 189, 189);
+    }   
+}
+.cabecera div{
+    padding: 1px 50px 1px 50px;    
+}
+.cuerpo{
+    background-image: url(../img/Fondo.jpg);
+    background-size: contain;
+    nav div h2{
+        font-size: large;
+        display: flex;
+        justify-content: center;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    nav .navegacion{
+        display: flex;
+        justify-content: center;  
+        ul li{
+            color: white;
+            margin: 10px 20px 0px 20px;
+            padding: 8px;
+            border-radius: 1rem;
+            border-style:outset;
+            background-color: rgb(240, 183, 183) ;
+            list-style: none;
+            display: inline-flex;
+            box-shadow: 3px rgb(192, 189, 189);
+        }  
+        ul li:hover{
+            transform: scale(1.1);      
+        }  
+    }
+    .sale div h2{
+        color: white;
+        font-size: xx-large;
+        font-weight: 600;
+        background-color:  rgb(240, 183, 183);
+        margin: 30px;
+        padding: 10px;
+    }
+    nav .imagenes{
+        display: grid;
+        grid-template-columns: auto auto auto ;
+        grid-template-rows: auto auto auto auto auto;
+        justify-content: space-evenly;
+        .imagen1{
+            padding: 10px;
+        }
+        .imagen2{
+            padding: 10px;
+        }
+        .imagen3{
+            padding: 10px;
+        }
+        .imagen4{
+            padding: 10px;
+        }
+        .imagen5{
+            padding: 10px;
+        }
+        .imagen6{
+            padding: 10px;
+        }
+        .imagen7{
+            padding: 10px;
+        }
+        .imagen8{
+            padding: 10px;
+        }
+        .imagen9{
+            padding: 10px;
+        }
+        .imagen10{
+            padding: 10px;
+        }
+        .imagen11{
+            padding: 10px;
+        }
+        .imagen12{
+            padding: 10px;
+        }
+        .imagen13{
+            padding: 10px;
+        }
+        .imagen14{
+            padding: 10px;
+        }
+        .imagen15{
+            padding: 10px;
+        }
+        div{
+            margin-top: 25px;
+            div{
+                text-align: center;
+                font-family:cursive;
+                font-weight: 600;
+                font-size: medium;
+        } 
+            .title{
+                font-size: x-small;
+            }
+            .descuento{
+                color: grey;
+                font-size: smaller;
+            }
+            .precio{
+                font-weight: 800;
+            }
+        }
+    }
+    .botonProductos{
+        background-color: rgb(240, 183, 183) ;
+        margin: 15px 300px 15px 300px;
+        padding: 5px;
+        font-weight: 600;
+        color: white;
+        text-align: center;
+        box-shadow: 3px rgb(192, 189, 189);
+        border-style: outset;
+    }
+    .botonProductos:hover{
+        transform: scale(1.1);
+    }
+    div .subtitle{
+        margin: 50px;
+        font-size: large;
+        display: flex;
+        justify-content: center;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+    div .sociales{
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        margin: 50px;
+    }
+}
+.datos{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+}
+.ofertas{
+    display: flex;
+    justify-content: center;
+    form {
+        text-align: center;
+        fieldset {
+        h3{
+            margin: 30px;
+            font-size: xx-large;
+            display: flex;
+            justify-content: center;
+            font-family:Arial, Helvetica, sans-serif;
+          }
+        h4{
+            font-size: smaller;
+            text-align: center;
+        }
+        div input{
+            width: 87%;
+            font-size: small;
+            margin: 20px;
+            text-align: center;
+        }
+     }
+    }
+ }
+ footer h4{
+    margin-top: 100px;
+    font-size: medium;
+    display: flex;
+    justify-content:center;
+ }
+
