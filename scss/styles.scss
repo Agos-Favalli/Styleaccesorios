@@ -1,6 +1,6 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 header div .encabezado {
@@ -39,7 +39,8 @@ header div ul{
     background-image: url(../img/Fondo.jpg);
     background-size: contain;
     nav div h2{
-        font-size: large;
+        font-size: x-large large;
+        font-weight: 700;
         display: flex;
         justify-content: center;
         font-family:Arial, Helvetica, sans-serif;
@@ -75,49 +76,7 @@ header div ul{
         grid-template-columns: auto auto auto ;
         grid-template-rows: auto auto auto auto auto;
         justify-content: space-evenly;
-        .imagen1{
-            padding: 10px;
-        }
-        .imagen2{
-            padding: 10px;
-        }
-        .imagen3{
-            padding: 10px;
-        }
-        .imagen4{
-            padding: 10px;
-        }
-        .imagen5{
-            padding: 10px;
-        }
-        .imagen6{
-            padding: 10px;
-        }
-        .imagen7{
-            padding: 10px;
-        }
-        .imagen8{
-            padding: 10px;
-        }
-        .imagen9{
-            padding: 10px;
-        }
-        .imagen10{
-            padding: 10px;
-        }
-        .imagen11{
-            padding: 10px;
-        }
-        .imagen12{
-            padding: 10px;
-        }
-        .imagen13{
-            padding: 10px;
-        }
-        .imagen14{
-            padding: 10px;
-        }
-        .imagen15{
+        .imagen{
             padding: 10px;
         }
         div{
@@ -149,13 +108,14 @@ header div ul{
         text-align: center;
         box-shadow: 3px rgb(192, 189, 189);
         border-style: outset;
+        border-radius: 1rem;
     }
     .botonProductos:hover{
         transform: scale(1.1);
     }
     div .subtitle{
         margin: 50px;
-        font-size: large;
+        font-weight: 600;
         display: flex;
         justify-content: center;
         font-family:Arial, Helvetica, sans-serif;
@@ -205,3 +165,46 @@ header div ul{
     justify-content:center;
  }
 
+
+
+ main form .formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+    padding: 50px;
+    .titulo{
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    div{
+        margin: 7px;
+        input{
+            padding: 0px 25px 0px 25px;
+            font-size: smaller;
+        }
+    }
+ }
+
+
+ main nav div{
+    text-align: center;
+    font-weight: normal;
+    ol{
+        li{
+            display: flex;
+            margin: 15px;
+        } 
+    } 
+    ul{
+        li{
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 15px;
+        } 
+    }
+ }
+   
+            
+        
