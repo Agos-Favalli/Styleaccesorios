@@ -9,14 +9,53 @@ let mensaje = `Bienvenid@" ${nombre}  ${apellido}`;
 if ( (nombre != " " && apellido != " ") ) {
     alert(mensaje);
 
+    //objetos
+    const accesorios = [
+        {nombre: "Aros", precio: 500, cantidad: 10},
+        {nombre: "Pulseras", precio: 1000, cantidad: 5},
+        {nombre: "Anillos", precio: 750, cantidad: 8},
+        {nombre: "Collares", precio: 1500, cantidad: 3}
+    ];
+   
     //Variables para calculos
 
     let minimo = 4000
-    let totalAPagar = Number (prompt ("Ingrese el importe a abonar"));
+    let totalAPagar = 0;
     let envioGratis = 7000
-    let descuento = totalAPagar * 0.15
-    let precioFinal = totalAPagar - descuento
     
+    accesorios.forEach((accesorio, index) => {
+        alert(
+          `${index + 1}. ${accesorio.nombre} - $${accesorio.precio} - ${
+            accesorio.cantidad
+          } unidades disponibles`
+        );
+      });
+
+    // seleccion de accesorios
+    let seleccionados = [];
+    while (true) {
+      let opcion = prompt(
+        "Seleccione un accesorio para comprar (ingrese el número correspondiente) o ingrese 'f' para finalizar la selección"
+      );
+      if (opcion === "f") {
+        break;
+      } else if (opcion >= 1 && opcion <= accesorios.length) {
+        let accesorio = accesorios[opcion - 1];
+        if (accesorio.cantidad > 0) {
+          seleccionados.push(accesorio);
+          accesorio.cantidad--;
+          totalAPagar += accesorio.precio;
+        } else {
+          alert("Lo sentimos, este accesorio no está disponible en este momento.");
+        }
+      } else {
+        alert("Opción inválida.");
+      }
+    }
+    alert("El total de la compra es $" + totalAPagar);
+
+    let cantidadTotal = seleccionados.reduce((total, accesorio) => total + 1, 0);
+    alert(`Ha seleccionado ${cantidadTotal} accesorios`);
 
     //Funciones para cálculo de formas de pagos
 
@@ -38,16 +77,13 @@ if ( (nombre != " " && apellido != " ") ) {
          while (formaDePago !== "1" && formaDePago !== "2" && formaDePago !== "3") {
          formaDePago = prompt('Por favor, elija una forma de pago válida:\n 1: Efectivo,\n 2: Transferencia,\n 3: Tarjeta,');
         }
+
         switch((formaDePago)){
         case "1":
         alert("Tienes un 15% de descuento ")
-        alert("El descuento obtenido es de: $"+descuento)
-        alert("Precio final: $"+precioFinal)
         break;
         case "2":
         alert("Tienes un 15% de descuento")
-        alert("El descuento obtenido es de: $"+descuento)
-        alert("Precio final: $"+precioFinal)
         alert("La CBU para realizar la transferencia es la siguiente. 0071928374958739200098. Una vez hecha enviar comprobante para confirmar el pago mediante email o whatsapp")
         break;
         case "3": 
@@ -75,4 +111,9 @@ else {
     alert("error al ingresar datos")
 }
     
+
+
+
+
+
 
