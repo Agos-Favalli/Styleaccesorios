@@ -213,6 +213,7 @@ class CarritoController {
     this.listaCarrito = [];
     this.contenedor_carrito = document.getElementById("contenedor_carrito");
     this.total = document.getElementById("total")
+  
   }
   agregar(producto) {
     this.listaCarrito.push(producto);
@@ -235,6 +236,7 @@ class CarritoController {
     this.contenedor_carrito.innerHTML = "";
   }
   mostrarEnDOM() {
+
     this.limpiarContenedor_carrito();
     this.listaCarrito.forEach((producto) => {
       this.contenedor_carrito.innerHTML += `
@@ -257,7 +259,19 @@ class CarritoController {
              </div>
         </div>`;
     });
+    this.mostrarTotalEnDOM()
   }  
+
+  calcularTotal (){
+    let total = 0
+    this.listaCarrito.forEach(producto=> {
+      total += (producto.descuento * producto.cantidad)
+    })
+    return total;
+  }
+  mostrarTotalEnDOM(){
+      this.total.innerHTML = this.calcularTotal()
+  }
 }
 
 const controladorProductos = new ProductoController();
@@ -286,6 +300,7 @@ finalizar.addEventListener("click", () => {
   controladorCarrito.limpiarContenedor_carrito()
   controladorCarrito.limpiarStorage()
   controladorCarrito.listaCarrito = []
+  controladorCarrito.mostrarTotalEnDOM()
 });
 
 //Funciones para modificar la cantidad del producto
@@ -294,7 +309,6 @@ function cantidadTotal() {
   controladorCarrito.mostrarEnDOM();
   controladorCarrito.guardarEnStorage();
 }
-
 function modificarCantidad(id, cantidad) {
   const producto = controladorCarrito.listaCarrito.find(
     (producto) => producto.id === id
@@ -308,7 +322,6 @@ function modificarCantidad(id, cantidad) {
     cantidadTotal();
   }
 }
-
 function quitar(id) {
   const indice = controladorCarrito.listaCarrito.findIndex(
     (producto) => producto.id === id
@@ -316,15 +329,13 @@ function quitar(id) {
   controladorCarrito.listaCarrito.splice(indice, 1);
   cantidadTotal();
 }
-
 function incrementar(id) {
   const producto = controladorCarrito.listaCarrito.find(
     (producto) => producto.id === id
-  );
+);
 
   modificarCantidad(id, producto.cantidad + 1);
 }
-
 function disminuir(id) {
   const producto = controladorCarrito.listaCarrito.find(
     (producto) => producto.id === id
