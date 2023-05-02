@@ -170,7 +170,6 @@ class ProductoController {
         3
       ),
     ];
-    this.mostrarEnDOM();
   }
   mostrarEnDOM() {
     this.listaProductos.forEach((producto) => {
@@ -200,7 +199,7 @@ class ProductoController {
           style: {
             background: "rgb(240, 183, 183)",
           },
-          }).showToast();
+        }).showToast();
         controladorCarrito.agregar(producto);
         controladorCarrito.guardarEnStorage();
         controladorCarrito.mostrarEnDOM(this.contenedor_carrito);
@@ -212,15 +211,14 @@ class CarritoController {
   constructor() {
     this.listaCarrito = [];
     this.contenedor_carrito = document.getElementById("contenedor_carrito");
-    this.total = document.getElementById("total")
-  
+    this.total = document.getElementById("total");
   }
   agregar(producto) {
     this.listaCarrito.push(producto);
   }
   //Storage y Json
-  limpiarStorage(){
-    localStorage.removeItem("listaCarrito")
+  limpiarStorage() {
+    localStorage.removeItem("listaCarrito");
   }
   guardarEnStorage() {
     let listaCarritoJSON = JSON.stringify(this.listaCarrito);
@@ -228,15 +226,14 @@ class CarritoController {
   }
   levantarDeStorage() {
     this.listaCarrito = JSON.parse(localStorage.getItem("listaCarrito")) || [];
-    if(this.listaCarrito.length > 0){
-      this.mostrarEnDOM()
+    if (this.listaCarrito.length > 0) {
+      this.mostrarEnDOM();
     }
   }
   limpiarContenedor_carrito() {
     this.contenedor_carrito.innerHTML = "";
   }
   mostrarEnDOM() {
-
     this.limpiarContenedor_carrito();
     this.listaCarrito.forEach((producto) => {
       this.contenedor_carrito.innerHTML += `
@@ -259,18 +256,18 @@ class CarritoController {
              </div>
         </div>`;
     });
-    this.mostrarTotalEnDOM()
-  }  
+    this.mostrarTotalEnDOM();
+  }
 
-  calcularTotal (){
-    let total = 0
-    this.listaCarrito.forEach(producto=> {
-      total += (producto.descuento * producto.cantidad)
-    })
+  calcularTotal() {
+    let total = 0;
+    this.listaCarrito.forEach((producto) => {
+      total += producto.descuento * producto.cantidad;
+    });
     return total;
   }
-  mostrarTotalEnDOM(){
-      this.total.innerHTML = this.calcularTotal()
+  mostrarTotalEnDOM() {
+    this.total.innerHTML = this.calcularTotal();
   }
 }
 
@@ -279,7 +276,6 @@ controladorProductos.iniciar();
 
 const controladorCarrito = new CarritoController();
 controladorCarrito.levantarDeStorage();
-
 
 //DOM
 controladorProductos.mostrarEnDOM();
@@ -297,10 +293,10 @@ finalizar.addEventListener("click", () => {
     showConfirmButton: false,
     timer: 2000,
   });
-  controladorCarrito.limpiarContenedor_carrito()
-  controladorCarrito.limpiarStorage()
-  controladorCarrito.listaCarrito = []
-  controladorCarrito.mostrarTotalEnDOM()
+  controladorCarrito.limpiarContenedor_carrito();
+  controladorCarrito.limpiarStorage();
+  controladorCarrito.listaCarrito = [];
+  controladorCarrito.mostrarTotalEnDOM();
 });
 
 //Funciones para modificar la cantidad del producto
@@ -332,7 +328,7 @@ function quitar(id) {
 function incrementar(id) {
   const producto = controladorCarrito.listaCarrito.find(
     (producto) => producto.id === id
-);
+  );
 
   modificarCantidad(id, producto.cantidad + 1);
 }
@@ -343,6 +339,3 @@ function disminuir(id) {
 
   modificarCantidad(id, producto.cantidad - 1);
 }
-
-
-
