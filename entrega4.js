@@ -14,6 +14,12 @@ class ProductoController {
     this.listaProductos = [];
     this.contenedor_productos = document.getElementById("contenedor_productos");
   }
+  async iniciar() {
+    const response = await fetch('productos.json');
+    const productosJSON = await response.json();
+    this.listaProductos = productosJSON.map(producto => new Producto(producto.id, producto.nombre, producto.precio, producto.descuento, producto.img, producto.alt));
+    this.mostrarEnDOM();
+  }
   iniciar() {
     this.listaProductos = [
       new Producto(
@@ -185,6 +191,11 @@ class ProductoController {
                        </div>
                     </div>`;
     });
+    const productosFiltrados = this.filtrarPorPrecio(200, 500); // Llamada a filtrarPorPrecio
+    console.log(productosFiltrados); // Imprimir en consola los productos filtrados
+  }
+  filtrarPorPrecio(precioMinimo, precioMaximo) {
+    return this.listaProductos.filter((producto) => producto.precio >= precioMinimo && producto.precio <= precioMaximo);
   }
   //Eventos
   darEventoClickAProducto(controladorCarrito) {
@@ -273,6 +284,8 @@ class CarritoController {
 
 const controladorProductos = new ProductoController();
 controladorProductos.iniciar();
+controladorProductos.mostrarEnDOM();
+
 
 const controladorCarrito = new CarritoController();
 controladorCarrito.levantarDeStorage();
