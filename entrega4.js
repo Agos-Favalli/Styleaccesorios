@@ -304,7 +304,7 @@ finalizar.addEventListener("click", () => {
     icon: "success",
     title: "Su compra ha sido realizada",
     showConfirmButton: false,
-    timer: 2000,
+    timer: 3000,
   });
   controladorCarrito.limpiarContenedor_carrito();
   controladorCarrito.limpiarStorage();
@@ -312,7 +312,7 @@ finalizar.addEventListener("click", () => {
   controladorCarrito.mostrarTotalEnDOM();
 });
 
-//Funciones para modificar la cantidad del producto
+//Funciones para modificar y eliminar la cantidad del producto
 
 function cantidadTotal() {
   controladorCarrito.mostrarEnDOM();
